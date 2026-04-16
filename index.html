@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>몽골 고비사막 남부투어 — 7일 자리 배치표</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #110E0A;
+  --bg2: #1C1610;
+  --card: #231A0F;
+  --card2: #2C2014;
+  --border: #3D2E1C;
+  --border2: #4F3D25;
+  --gold: #C8952E;
+  --gold-light: #E4B660;
+  --text: #EDE0C4;
+  --text2: #A89070;
+  --text3: #6B5840;
+  --sand: #D4B87A;
+
+  --민-bg: #3D1522;
+  --민-dark: #5C1F34;
+  --민-dot: #E0607A;
+  --민-text: #F0A0B0;
+
+  --응주-bg: #0E1E38;
+  --응주-dark: #142B50;
+  --응주-dot: #4B96E8;
+  --응주-text: #90C0F4;
+
+  --수정-bg: #0A2418;
+  --수정-dark: #0F3322;
+  --수정-dot: #28B87A;
+  --수정-text: #70D4A8;
+
+  --미경-bg: #1E183C;
+  --미경-dark: #2A2254;
+  --미경-dot: #8878E8;
+  --미경-text: #B8ACFF;
+
+  --소영-bg: #2C1E08;
+  --소영-dark: #3E2A0A;
+  --소영-dot: #E8A030;
+  --소영-text: #F4CC80;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans KR', sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Subtle desert pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, #2A1E0A22 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, #1A0E0622 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.header h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.header h1 span { color: var(--gold-light); }
+
+.header-sub {
+  font-size: 13px;
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.header-sub span::before { content: '·'; margin-right: 16px; color: var(--border2); }
+.header-sub span:first-child::before { display: none; }
+
+/* People legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2rem;
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.legend-title {
+  width: 100%;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--text3);
+  margin-bottom: 4px;
+}
+
+.person-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+/* Section titles */
+.section-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 16px;
+  color: var(--gold-light);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 6px 7px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text2);
+  cursor: pointer;
+  font-size: 12px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  transition: all .2s;
+  line-height: 1.4;
+}
+
+.tab:hover { border-color: var(--border2); color: var(--text); }
+
+.tab.on {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1A1006;
+  font-weight: 700;
+}
+
+.tab.long-day {
+  border-color: var(--gold)55;
+}
+
+.tab .tab-hours {
+  font-size: 10px;
+  opacity: 0.75;
+  display: block;
+  margin-top: 1px;
+}
+
+/* Day info strip */
+.day-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.day-label { font-size: 13px; font-weight: 700; color: var(--gold-light); }
+.day-hours { font-size: 12px; color: var(--text2); }
+.day-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.day-badge.hard { background: #5C1F0A; color: #F08050; border: 1px solid #8C3010; }
+.day-badge.medium { background: var(--card); color: var(--text2); border: 1px solid var(--border); }
+.day-badge.easy { background: #0A2010; color: #50C070; border: 1px solid #1A4020; }
+
+/* Van wrapper */
+.van-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 580px) {
+  .van-wrap { grid-template-columns: 1fr; }
+}
+
+.van-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 16px;
+}
+
+.van-inner { max-width: 280px; margin: 0 auto; }
+
+.van-row {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.seat {
+  flex: 1;
+  max-width: 84px;
+  height: 68px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .15s;
+  user-select: none;
+  border: 1.5px solid transparent;
+  position: relative;
+}
+
+.seat .seat-label { font-size: 8px; opacity: 0.5; margin-bottom: 2px; letter-spacing: 0.2px; }
+.seat .seat-name { font-size: 14px; font-weight: 700; line-height: 1; }
+.seat .seat-tier { font-size: 8px; margin-top: 3px; opacity: 0.7; }
+
+.seat.fixed {
+  cursor: default;
+  background: #1C1610;
+  border-color: var(--border);
+  opacity: 0.6;
+}
+
+.seat.sel {
+  outline: 2.5px solid var(--gold);
+  outline-offset: 2px;
+  z-index: 2;
+}
+
+.seat.couple-adj {
+  border-width: 2px;
+}
+
+.seat.couple-adj::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 13px;
+  border: 1px dashed;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.row-divider {
+  text-align: center;
+  font-size: 9px;
+  color: var(--border2);
+  letter-spacing: 3px;
+  margin: 3px 0;
+}
+
+.couple-status {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.couple-status.ok { color: #E0607A; }
+
+/* Side info panel */
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-card {
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.info-card-title {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text3);
+  margin-bottom: 8px;
+}
+
+.seat-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.seat-detail-row:last-child { border-bottom: none; }
+
+.seat-pos { width: 54px; color: var(--text3); font-size: 11px; }
+.seat-tier-badge {
+  font-size: 9px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-weight: 700;
+  min-width: 38px;
+  text-align: center;
+}
+
+.tier-S { background: #3D2E0A; color: var(--gold-light); border: 1px solid var(--gold)55; }
+.tier-A { background: #0A2030; color: #60A8D8; border: 1px solid #2060A055; }
+.tier-C { background: #1C1610; color: var(--text3); border: 1px solid var(--border); }
+
+.seat-person-name { font-weight: 700; flex: 1; }
+
+/* Hint */
+.hint {
+  font-size: 11px;
+  color: var(--text3);
+  text-align: center;
+  padding: 8px;
+  min-height: 28px;
+}
+
+/* Score board */
+.scores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 4px;
+}
+
+@media (max-width: 400px) {
+  .scores { grid-template-columns: repeat(2, 1fr); }
+}
+
+.score-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: border-color .15s;
+}
+
+.score-card.couple-card { border-color: var(--민-dark); }
+
+.sc-head { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.sc-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.sc-name { font-size: 13px; font-weight: 700; }
+.sc-sub { font-size: 10px; color: var(--text3); margin-bottom: 5px; }
+.sc-score { font-size: 20px; font-weight: 700; font-family: 'Noto Serif KR', serif; line-height: 1; margin-bottom: 6px; }
+.bar { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 2px; transition: width .4s cubic-bezier(.4,0,.2,1); }
+
+/* Full schedule table */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.schedule-table th {
+  padding: 8px 10px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--text3);
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.schedule-table td {
+  padding: 8px 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.schedule-table tr:last-child td { border-bottom: none; }
+
+.schedule-table td.day-col {
+  text-align: left;
+  color: var(--text2);
+  font-size: 11px;
+}
+
+.schedule-table td.hours-col {
+  color: var(--text3);
+  font-size: 10px;
+}
+
+.name-cell {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Principles section */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 4px;
+}
+
+@media (max-width: 500px) {
+  .principles { grid-template-columns: 1fr; }
+}
+
+.principle-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.principle-card h3 {
+  font-size: 12px;
+  color: var(--gold);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.principle-card p, .principle-card li {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.principle-card ul { padding-left: 14px; }
+.principle-card ul li { margin-bottom: 2px; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text3);
+}
+
+/* Responsive */
+@media (max-width: 580px) {
+  .page { padding: 1.5rem 1rem 3rem; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-badge">🏜 Mongolia 2025 June</div>
+    <h1>고비사막 남부투어<br><span>7일 자리 배치표</span></h1>
+    <div class="header-sub">
+      <span>하이스 밴 탑승</span>
+      <span>총 6명</span>
+      <span>부부(민/유진) 나란히 배치</span>
+      <span>운전자·가이드 별도</span>
+    </div>
+  </div>
+
+  <!-- People legend -->
+  <div class="legend">
+    <div class="legend-title">탑승 멤버</div>
+    <div class="person-pill" style="background:var(--민-bg);border-color:var(--민-dark);color:var(--민-text)">
+      <span>♥</span> 민 <span style="opacity:.5;font-size:10px">부부</span>
+    </div>
+    <div class="person-pill" style="background:var(--민-bg);border-color:var(--민-dark);color:var(--민-text)">
+      <span>♥</span> 유진 <span style="opacity:.5;font-size:10px">부부</span>
+    </div>
+    <div class="person-pill" style="background:var(--응주-bg);border-color:var(--응주-dark);color:var(--응주-text)">응주</div>
+    <div class="person-pill" style="background:var(--수정-bg);border-color:var(--수정-dark);color:var(--수정-text)">수정</div>
+    <div class="person-pill" style="background:var(--미경-bg);border-color:var(--미경-dark);color:var(--미경-text)">미경</div>
+    <div class="person-pill" style="background:var(--소영-bg);border-color:var(--소영-dark);color:var(--소영-text)">소영</div>
+  </div>
+
+  <!-- Interactive Section -->
+  <div class="section-title">일별 자리 배치</div>
+
+  <!-- Tabs -->
+  <div class="tabs" id="tabs"></div>
+
+  <!-- Day info strip -->
+  <div class="day-info" id="day-info"></div>
+
+  <!-- Van + Side panel -->
+  <div class="van-wrap">
+    <div class="van-box">
+      <div class="van-inner" id="van"></div>
+      <div class="hint" id="hint">💡 두 자리를 순서대로 클릭하면 교체할 수 있어요</div>
+    </div>
+    <div class="side-panel" id="side-panel"></div>
+  </div>
+
+  <div style="text-align:right;margin-bottom:2rem">
+    <button onclick="resetAll()" style="font-size:12px;padding:6px 16px;background:var(--card);border:1px solid var(--border);color:var(--text2);border-radius:6px;cursor:pointer">↩ 원래 배치로</button>
+  </div>
+
+  <!-- Scores -->
+  <div class="section-title">공정성 점수 (전체 7일 누적)</div>
+  <div class="scores" id="scores"></div>
+  <p style="font-size:10px;color:var(--text3);margin-top:10px;text-align:right">
+    ★명당(중간창가) 4pt · 일반창가(뒤좌·뒤우) 3pt · 가운데(중중·뒤중) 1pt
+  </p>
+
+  <!-- Full Schedule Table -->
+  <div class="section-title" style="margin-top:2rem">전체 7일 배치 한눈에 보기</div>
+  <div style="overflow-x:auto;border:1px solid var(--border);border-radius:12px">
+    <table class="schedule-table" id="schedule-table"></table>
+  </div>
+
+  <!-- Principles -->
+  <div class="section-title" style="margin-top:2rem">배치 원칙</div>
+  <div class="principles">
+    <div class="principle-card">
+      <h3>💑 부부 나란히</h3>
+      <p>민·유진은 매일 인접한 두 자리를 함께 배정. 중간열(중중+창가)과 뒷열(뒤중+창가)을 번갈아 사용.</p>
+    </div>
+    <div class="principle-card">
+      <h3>⏱ 장거리 우선 배려</h3>
+      <ul>
+        <li>D1(7~8h), D5(6~7h) 최장거리에<br>유진 → ★명당(중간-좌) 확보</li>
+        <li>힘든 날일수록 좋은 자리로</li>
+      </ul>
+    </div>
+    <div class="principle-card">
+      <h3>⚖️ 공정한 점수</h3>
+      <ul>
+        <li>민·유진 각 <strong style="color:var(--민-text)">16점</strong> (완전 동점)</li>
+        <li>나머지 4인 19~21점 (차이 ±2점)</li>
+        <li>부부는 항상 가운데 자리 1개를 감수하는 구조</li>
+      </ul>
+    </div>
+    <div class="principle-card">
+      <h3>🔄 가운데 자리 배분</h3>
+      <p>중중·뒤중(가운데 자리)을 7일에 걸쳐 고르게 배분. 소영 1회, 나머지 멤버 1~2회씩.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    6월 몽골 고비사막 남부투어 🐪 · 자리는 클릭으로 교체 가능 · 현장에서 유연하게 조정하세요
+  </div>
+</div>
+
+<script>
+const COUPLE = ['민','유진'];
+const PEOPLE = ['민','유진','응주','수정','미경','소영'];
+const COLORS = {
+  '민':   { bg:'var(--민-bg)',   border:'var(--민-dark)',   dot:'var(--민-dot)',   tx:'var(--민-text)',   name:'민'   },
+  '유진': { bg:'var(--민-bg)',   border:'var(--민-dark)',   dot:'var(--민-dot)',   tx:'var(--민-text)',   name:'유진' },
+  '응주': { bg:'var(--응주-bg)', border:'var(--응주-dark)', dot:'var(--응주-dot)', tx:'var(--응주-text)', name:'응주' },
+  '수정': { bg:'var(--수정-bg)', border:'var(--수정-dark)', dot:'var(--수정-dot)', tx:'var(--수정-text)', name:'수정' },
+  '미경': { bg:'var(--미경-bg)', border:'var(--미경-dark)', dot:'var(--미경-dot)', tx:'var(--미경-text)', name:'미경' },
+  '소영': { bg:'var(--소영-bg)', border:'var(--소영-dark)', dot:'var(--소영-dot)', tx:'var(--소영-text)', name:'소영' },
+};
+const SEAT_LABELS = ['중간-좌','중간-중','중간-우','뒤-좌','뒤-중','뒤-우'];
+const SEAT_SCORES = [4,1,4,3,1,3];
+const SEAT_TIERS = ['★명당','가운데','★명당','창가','가운데','창가'];
+const SEAT_TIER_CLASS = ['tier-S','tier-C','tier-S','tier-A','tier-C','tier-A'];
+const HOURS = ['7~8시간','5~6시간','4~5시간','4~5시간','6~7시간','4~5시간','3~4시간'];
+const HOUR_NUMS = [7.5,5.5,4.5,4.5,6.5,4.5,3.5];
+const DAY_DESCS = [
+  {label:'최장거리', cls:'hard', emoji:'🔥'},
+  {label:'장거리',   cls:'hard', emoji:'🔥'},
+  {label:'중간',     cls:'medium', emoji:'☀'},
+  {label:'중간',     cls:'medium', emoji:'☀'},
+  {label:'장거리',   cls:'hard', emoji:'🔥'},
+  {label:'중간',     cls:'medium', emoji:'☀'},
+  {label:'단거리',   cls:'easy', emoji:'🌙'},
+];
+
+// [중좌, 중중, 중우, 뒤좌, 뒤중, 뒤우]
+const BASE = [
+  ['유진','민','응주','수정','소영','미경'],
+  ['미경','민','유진','소영','응주','수정'],
+  ['소영','수정','응주','민','유진','미경'],
+  ['수정','응주','미경','소영','유진','민'],
+  ['유진','민','미경','소영','수정','응주'],
+  ['수정','유진','민','응주','미경','소영'],
+  ['소영','미경','응주','수정','유진','민'],
+];
+let state = BASE.map(d=>[...d]), day=0, sel=null;
+
+const ADJ = [[0,1],[1,0],[1,2],[2,1],[3,4],[4,3],[4,5],[5,4]];
+const isAdj = (i,j) => ADJ.some(p=>p[0]===i&&p[1]===j);
+const isCouple = p => COUPLE.includes(p);
+
+function coupleIndices(d) { return COUPLE.map(c=>d.indexOf(c)); }
+function coupleAdjacent(d) { const [a,b]=coupleIndices(d); return isAdj(a,b); }
+function totalScore(p) { return state.reduce((s,d)=>{ const i=d.indexOf(p); return s+(i>=0?SEAT_SCORES[i]:0); },0); }
+function winCount(p) { return state.reduce((s,d)=>{ const i=d.indexOf(p); return s+(i>=0&&SEAT_SCORES[i]>=3?1:0); },0); }
+
+function renderTabs() {
+  document.getElementById('tabs').innerHTML = HOURS.map((_,i) => {
+    const isLong = HOUR_NUMS[i] >= 5.5;
+    return `<button class="tab${day===i?' on':''}${isLong?' long-day':''}" onclick="setDay(${i})">
+      ${i+1}일차
+      <span class="tab-hours">${HOURS[i]}</span>
+    </button>`;
+  }).join('');
+}
+
+function renderDayInfo() {
+  const d = DAY_DESCS[day];
+  document.getElementById('day-info').innerHTML = `
+    <span class="day-label">${day+1}일차</span>
+    <span class="day-hours">⏱ ${HOURS[day]}</span>
+    <span class="day-badge ${d.cls}">${d.emoji} ${d.label}</span>
+  `;
+}
+
+function renderVan() {
+  const d = state[day];
+  const adj = coupleAdjacent(d);
+  let html = '';
+
+  // Front (fixed)
+  html += `<div class="van-row">
+    <div class="seat fixed"><span class="seat-label">운전석</span><span class="seat-name" style="font-size:12px;color:var(--text3)">운전자</span></div>
+    <div class="seat fixed"><span class="seat-label">조수석</span><span class="seat-name" style="font-size:12px;color:var(--text3)">가이드</span></div>
+  </div>
+  <div class="row-divider">▾ ▾ ▾</div>`;
+
+  [[0,1,2],[3,4,5]].forEach((row, ri) => {
+    if(ri>0) html += `<div class="row-divider">▾ ▾ ▾</div>`;
+    html += `<div class="van-row">`;
+    row.forEach(si => {
+      const p = d[si], cv = COLORS[p], isC = isCouple(p);
+      const isCA = isC && adj;
+      const isSel = sel === si;
+      html += `<div class="seat${isSel?' sel':''}${isCA?' couple-adj':''}"
+        style="background:${cv.bg};border-color:${isCA?cv.border:cv.border.replace('dark','bg')+'}'};${isCA?'border-width:2px':''}"
+        onclick="clickSeat(${si})">
+        <span class="seat-label">${SEAT_LABELS[si]}</span>
+        <span class="seat-name" style="color:${cv.tx}">${p}</span>
+        <span class="seat-tier" style="color:${cv.tx}">${isC?'♥ 부부':SEAT_TIERS[si]}</span>
+      </div>`;
+    });
+    html += `</div>`;
+  });
+
+  html += `<div class="couple-status${adj?' ok':''}">
+    ${adj ? '💑 부부 나란히 배치 ✓' : '⚠ 부부가 떨어져 있어요'}
+  </div>`;
+
+  document.getElementById('van').innerHTML = html;
+}
+
+function renderSidePanel() {
+  const d = state[day];
+  let html = `<div class="info-card">
+    <div class="info-card-title">오늘의 자리 배정</div>`;
+
+  for(let si=0; si<6; si++) {
+    const p = d[si], cv = COLORS[p];
+    html += `<div class="seat-detail-row">
+      <span class="seat-pos">${SEAT_LABELS[si]}</span>
+      <span class="seat-tier-badge ${SEAT_TIER_CLASS[si]}">${SEAT_TIERS[si]}</span>
+      <span class="seat-person-name" style="color:${cv.tx}">${p}${isCouple(p)?'<span style="font-size:9px;margin-left:2px;opacity:.7">♥</span>':''}</span>
+    </div>`;
+  }
+  html += `</div>`;
+
+  // Tip
+  const longDay = HOUR_NUMS[day] >= 5.5;
+  html += `<div class="info-card" style="flex:1">
+    <div class="info-card-title">TIP</div>
+    <p style="font-size:11px;color:var(--text2);line-height:1.6">
+      ${longDay
+        ? `장거리 이동일(${HOURS[day]})이에요.<br>가운데 자리는 창가보다 훨씬 힘드니 주의하세요. 유진은 ★명당 자리로 배려했어요.`
+        : `이동이 비교적 짧은 날(${HOURS[day]})이에요.<br>가운데 자리도 충분히 견딜 수 있어요.`}
+    </p>
+  </div>`;
+
+  document.getElementById('side-panel').innerHTML = html;
+}
+
+function renderScores() {
+  const maxPts = 25;
+  document.getElementById('scores').innerHTML = PEOPLE.map(p => {
+    const sc = totalScore(p), wc = winCount(p), cv = COLORS[p];
+    const isC = isCouple(p);
+    const pct = Math.round(sc/maxPts*100);
+    return `<div class="score-card${isC?' couple-card':''}">
+      <div class="sc-head">
+        <div class="sc-dot" style="background:${cv.dot}"></div>
+        <span class="sc-name" style="color:${cv.tx}">${p}${isC?'<span style="font-size:9px;margin-left:2px">♥</span>':''}</span>
+      </div>
+      <div class="sc-score" style="color:${cv.tx}">${sc}</div>
+      <div class="sc-sub">창가 ${wc}회 / 7일</div>
+      <div class="bar"><div class="bar-fill" style="width:${pct}%;background:${cv.dot}"></div></div>
+    </div>`;
+  }).join('');
+}
+
+function renderTable() {
+  const heads = ['일자','이동','중좌','중중','중우','뒤좌','뒤중','뒤우'];
+  const tierBadge = (si, p) => {
+    const cv = COLORS[p];
+    const isC = isCouple(p);
+    return `<span class="name-cell" style="background:${cv.bg};border:1px solid ${cv.border};color:${cv.tx}">${p}${isC?'♥':''}</span>`;
+  };
+  let html = `<thead><tr>${heads.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>`;
+  BASE.forEach((d,i) => {
+    const d2 = DAY_DESCS[i];
+    html += `<tr>
+      <td class="day-col"><b>${i+1}일차</b></td>
+      <td class="hours-col">${HOURS[i]}</td>
+      ${d.map((p,si)=>`<td>${tierBadge(si,p)}</td>`).join('')}
+    </tr>`;
+  });
+  html += `</tbody>`;
+  document.getElementById('schedule-table').innerHTML = html;
+}
+
+function clickSeat(si) {
+  if(sel===null) {
+    sel=si;
+    document.getElementById('hint').textContent = '교체할 두 번째 자리를 클릭하세요 →';
+  } else if(sel===si) {
+    sel=null;
+    document.getElementById('hint').textContent = '💡 두 자리를 순서대로 클릭하면 교체할 수 있어요';
+  } else {
+    [state[day][sel],state[day][si]] = [state[day][si],state[day][sel]];
+    sel=null;
+    document.getElementById('hint').textContent = '✔ 교체 완료! 부부 자리가 떨어지지 않도록 주의하세요';
+    setTimeout(()=>{ document.getElementById('hint').textContent='💡 두 자리를 순서대로 클릭하면 교체할 수 있어요'; },2500);
+  }
+  render();
+}
+
+function setDay(i) { day=i; sel=null; render(); }
+function resetAll() { state=BASE.map(d=>[...d]); sel=null; render(); }
+
+function render() {
+  renderTabs();
+  renderDayInfo();
+  renderVan();
+  renderSidePanel();
+  renderScores();
+  renderTable();
+}
+
+render();
+</script>
+</body>
+</html>
